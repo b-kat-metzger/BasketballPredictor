@@ -1,0 +1,21 @@
+@import '../assets/variables.css';
+#root {
+  max-width: 1280px;
+  /* margin: 0 auto; */
+  /* padding: .5rem; */
+  text-align: center;
+  background-color: var(--background);
+}
+.app{
+  display:flex;
+  flex-direction: column;
+  /* height:100vh; */
+}
+.app-contents{
+  display: flex;
+  height:100vh;
+}
+
+h1{
+  color:black;
+}
