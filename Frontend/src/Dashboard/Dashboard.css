@@ -1,0 +1,8 @@
+.dashboard{
+    display: flex;
+    padding:15px;
+}
+.hero{
+    margin-left:auto;
+    margin-right:auto;
+}

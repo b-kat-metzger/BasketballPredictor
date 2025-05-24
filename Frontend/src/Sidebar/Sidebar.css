@@ -1,12 +1,10 @@
 .sidebar{
     position: sticky;
-    width:20%;
     height:calc(100vh - 64px);
     display:flex;
     background-color: var(--sidebar-color);
     flex-direction: column;
     overflow: hidden;
-    margin-top: 64px;
     row-gap: 15px;
 }
 
@@ -26,4 +24,7 @@
     padding-right:25px;
     padding-top:15px;
     column-gap: 25px;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space: nowrap;
 }
