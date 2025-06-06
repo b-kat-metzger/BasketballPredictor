@@ -1,5 +1,7 @@
 import './Stats.css'
 import { useState } from 'react'
+import {searchPlayerById, searchPlayerByName} from './searchPlayer.js'
+import PlayerTable from './PlayerTable.jsx'
 
 // async function computeStats(nums){
 //   const request = {'features':nums}
@@ -22,55 +24,30 @@ import { useState } from 'react'
 //   }).then(data=>data.json())
 // }
 
-async function searchPlayerById(player_id){
-  return fetch(`http://localhost:5000/players/${player_id}`,{
-    method:'GET',
-    headers:{
-      'Content-Type':'application/json'
-    },
-    body:JSON.stringify()
-  })
-  .then(response=>{
-    if(!response.ok){
-      console.log(response)
-      if(response.status===404){
-        console.error(`Could not locate player with id: ${player_id}`)
-      }
-      else{
-        console.error("Error: ", response.status);
-      }
-    }
-    else{
-      return response.json()
-    }
-  })
-  // .then(data=>data.json())
-  .catch(error=>{
-    console.error('Fetch error', {error});
-  })
-}
-
 export default function Stats() {
   const [searchPlayer,setSearchPlayer] = useState("")
   const [displayPlayer,setDisplayPlayer] = useState("");
 
   const handleSubmit = async e=>{
     e.preventDefault();
-    const result_player = await searchPlayerById(searchPlayer);
-    setDisplayPlayer(result_player ? result_player.full_name: `Could not locate player!`);
+    const result_player = await searchPlayerByName(searchPlayer);
+    setDisplayPlayer(result_player ? result_player.id: `Could not locate player!`);
   }
   const handleChange = (e)=>{
-    setSearchPlayer(e.target.value.split(","));
+    setSearchPlayer(e.target.value);
   }
 
   return (
-    <div>
+    <div style={{width:'100%', padding:'5px'}}>
       <h2>Stats</h2>
       <form>
         <input type="text" onChange={handleChange}/>
         <button type="submit" onClick={handleSubmit}>Search player by ID</button>
       </form>
       <h1>{displayPlayer}</h1>
+      <p>Hover for more info</p>
+      <PlayerTable />
+
     </div>
   )
 }
