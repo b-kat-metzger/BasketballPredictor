@@ -81,10 +81,12 @@ export default function PlayerTable() {
         e.preventDefault();
         if(sortBy===id){
             setOrder(prev=>(prev==='asc' ? 'desc' : 'asc'))
+            setPages(0)
         }
         else{
             setSortBy(id);
             setOrder("desc")
+            setPages(0)
         }
     }
 
