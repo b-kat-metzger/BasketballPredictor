@@ -39,7 +39,7 @@ def set_injured_status(season, season_type, teams,players):
 def get_team_stats(season, season_type, teams, players):
 
     print(f"Fetching team stats for {season}: {season_type}")
-    columns = ['TEAM_ID', 'TEAM_ABBREVIATION','TEAM_NAME', 'W', 'L', 'W_PCT', 'FGM_RANK', 'FG3M_RANK', 'PLUS_MINUS_RANK', 'REB_RANK', 'AST_RANK',
+    columns = ['TEAM_ID', 'TEAM_ABBREVIATION','TEAM_NAME', 'W_PCT', 'FGM_RANK', 'FG3M_RANK', 'PLUS_MINUS_RANK', 'REB_RANK', 'AST_RANK',
      'TOV_RANK', 'STL_RANK', 'BLK_RANK', 'PF_RANK', 'PTS_RANK','DivisionRank', 'HOME_WINS', 'ROAD_WINS', 'CurrentHomeStreak',
      'CurrentRoadStreak', 'CurrentStreak', 'HighValueInjured']
 
