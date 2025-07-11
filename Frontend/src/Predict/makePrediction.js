@@ -1,5 +1,5 @@
 const makePrediction = async(home_team,away_team)=>{
-    return fetch(`http://localhost:5000/api/predict?home=${home_team}&away=${away_team}`,{
+    return fetch(`https://backend-rho1.onrender.com/api/predict?home=${home_team}&away=${away_team}`,{
         method:'GET',
         headers:{
             'Content-Type':'application/JSON'

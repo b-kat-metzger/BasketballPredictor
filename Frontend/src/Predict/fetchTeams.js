@@ -1,5 +1,5 @@
 const fetchTeams= async ()=>{
-    return fetch('http://localhost:5000/api/teams',{
+    return fetch('https://backend-rho1.onrender.com/api/teams',{
         method:'GET',
         headers:{
             'Content-Type':'application/JSON'

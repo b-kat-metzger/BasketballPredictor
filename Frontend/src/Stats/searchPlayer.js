@@ -28,7 +28,7 @@ async function searchPlayerById(player_id){
 
 async function searchPlayerByName(player_name){
     const joinedName = player_name.split(" ").join("_");
-    return fetch(`http://localhost:5000/players/${joinedName}`,{
+    return fetch(`https://backend-rho1.onrender.com/players/${joinedName}`,{
     method:'GET',
     headers:{
       'Content-Type':'application/JSON'

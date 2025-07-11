@@ -1,7 +1,7 @@
 const fetchPlayers = async (pageNumber,card_limit, sort, order) =>{
     const searchParams = new URLSearchParams({'page':pageNumber,'limit':card_limit, 'sort':sort,'order':order})
-    console.debug(`Fetching from url: http://localhost:5000/api/stats/players?${searchParams}`)
-    return fetch(`http://localhost:5000/api/stats/players?${searchParams}`, {
+    console.debug(`Fetching from url: https://backend-rho1.onrender.com/api/stats/players?${searchParams}`)
+    return fetch(`https://backend-rho1.onrender.com/api/stats/players?${searchParams}`, {
         method:'GET',
         headers:{
             'Content-Type': 'application/JSON',
