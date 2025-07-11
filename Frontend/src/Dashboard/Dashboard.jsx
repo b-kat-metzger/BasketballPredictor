@@ -1,6 +1,6 @@
 import './Dashboard.css'
-import React from 'react'
 import Button from '@mui/material/Button'
+import { useNavigate } from 'react-router-dom'
 
 export default function Dashboard() {
   return (
@@ -18,11 +18,27 @@ export default function Dashboard() {
         </div>
       </section>
       <div className="row pt-3">
-              <Button className='col-sm-4'href='/predict' sx={{color:'#284B63'}}>Use the model!</Button>
-              <Button className='col-sm-4'href='/stats' sx={{color:'#284B63'}}>Look at player stats!</Button>
-              <Button className='col-sm-4'href='/info' sx={{color:'#284B63'}}>See information about the project</Button>
+             <NavButton path="/predict" text="Use the model!" />
+             <NavButton path="/stats" text="Look at player stats!"/>
+             <NavButton path="/info" text="See information about the project"/>
       </div>
     </div>
 
+  )
+}
+
+
+function NavButton({path,text}){
+  const navigate = useNavigate()
+  const handleClick =()=>{
+    navigate(path)
+  }
+  return(
+    <Button className='col-sm-4'onClick={(e)=>{
+      e.preventDefault();
+      handleClick({path})}} sx={{color:'#284B63'}
+      }>
+      {text}
+    </Button>
   )
 }
