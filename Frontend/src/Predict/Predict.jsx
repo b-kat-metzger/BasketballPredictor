@@ -65,7 +65,7 @@ export default function Predict() {
     <div className='predict-container'>
         <div className="row align-items center">
             <div className="col-12 col-md-8">
-                <img className='predict-helper' src="../public/predict-hero.png" alt="" />
+                <img className='predict-helper' src="./predict-hero.png" alt="" />
             </div>
             <div className="col-md-3 teams-selected">
                 <div className="row display-home">
