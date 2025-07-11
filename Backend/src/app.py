@@ -1,17 +1,29 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import json, re
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+import json, re, csv
 import pandas as pd
 from make_prediction import make_prediction
 
 app = Flask(__name__)
 CORS(app)
+rateLimiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=['100 per hour']
+)
 
 with open("players.json","r") as FILE:
     active_players = json.load(FILE)
-
+with open('teams.json','r') as FILE:
+    teams = json.load(FILE)
 player_stats_2024 = pd.read_csv('player_stats_2024.csv')
 
+
+@app.route('/api/teams',methods=['GET'])
+def get_teams():
+    return teams
 
 @app.route('/api/stats/players', methods=['GET'])
 def get_players():
@@ -28,6 +40,7 @@ def get_players():
 
 
 @app.route('/api/predict',methods=['GET'])
+@rateLimiter.limit("20 per minute")
 def predict():
     home_team = str(request.args.get('home'))
     away_team = str(request.args.get('away'))

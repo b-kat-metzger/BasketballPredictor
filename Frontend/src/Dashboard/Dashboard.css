@@ -1,8 +1,33 @@
 .dashboard{
-    display: flex;
+    display: relative;
     padding:15px;
+    width:100%;
 }
 .hero{
     margin-left:auto;
     margin-right:auto;
+    margin-bottom: auto;
+    background-color: #3C6E71;
+}
+.sixtyfour-hero-header{
+  font-family: "Sixtyfour", sans-serif;
+  color: #D9D9D9;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "BLED" 0,
+    "SCAN" 50;
+}
+.hero-text{
+    font-family: 'Inter';
+    color:#D9D9D9;
+    font-weight: 450;
+    letter-spacing: .10rem;
+    padding: 15px;
+}
+
+
+#hero_img{
+    width: 90%;
 }

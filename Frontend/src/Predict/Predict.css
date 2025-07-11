@@ -1,0 +1,49 @@
+.predict-container{
+    width:100%;
+    padding:15px;
+    text-align: left;
+    justify-content: left;
+}
+.predict-helper{
+    width: 100%;
+}
+.display-home,
+.display-away,
+#result-container{
+    border-radius: 10px;
+    border:1px solid #353535;
+    flex-shrink:0;
+}
+.display-home::before{
+    content:'Home Team';
+    font-weight: 650;
+    font-family: 'Inter';
+    /* bottom:-40px; */
+    left:-20px;
+    padding: 20px;
+    /* position:relative; */
+}
+.display-away::before{
+    content:'Away Team';
+    font-weight: 650;
+    font-family: 'Inter';
+    /* bottom:-40px; */
+    left:-20px;
+    padding: 20px;
+    /* position:relative; */
+}
+#calculate-button{
+    background-color: var(--primary-light);
+    color:#FFF;
+    font-family: 'Inter';
+    font-weight: 440;
+    padding:10px;
+    justify-content: center;
+    margin-left: 20px;
+    margin-top:10px;
+}
+#result-container{
+    text-align: center;
+    align-items: center;
+    width: 40%;
+}

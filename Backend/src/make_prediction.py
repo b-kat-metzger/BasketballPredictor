@@ -15,7 +15,7 @@ def make_prediction(home_team, away_team):
                 'AWAY_CurrentHomeStreak','AWAY_CurrentRoadStreak','AWAY_CurrentStreak','AWAY_HighValueInjured'
                 ]
     home_stats = team_stats_df.loc[team_stats_df['TEAM_ABBREVIATION']==home_team].add_prefix('HOME_')
-    away_stats = team_stats_df[team_stats_df['TEAM_ABBREVIATION']==away_team].add_prefix('AWAY_')
+    away_stats = team_stats_df.loc[team_stats_df['TEAM_ABBREVIATION']==away_team].add_prefix('AWAY_')
     if home_stats.empty or away_stats.empty:
         return {'error':400}
     features = pd.concat([home_stats.reset_index(drop=True),away_stats.reset_index(drop=True)],axis=1)
@@ -29,4 +29,5 @@ def make_prediction(home_team, away_team):
     win_team = home_team if prediction>0.500 else away_team
     if win_team==away_team:
         prediction = 1.00-prediction
-    return [{'win':win_team},{'W_PCT':float(prediction)}]
+    win_team_full = team_stats_df.loc[team_stats_df['TEAM_ABBREVIATION']==win_team]['TEAM_NAME'].values[0]
+    return [{'win':win_team,'W_PCT':float(prediction),'TEAM_NAME':win_team_full}]

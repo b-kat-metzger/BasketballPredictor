@@ -162,7 +162,7 @@ export default function PlayerTable() {
             </Table>
         </TableContainer>
         <TablePagination 
-        rowsPerPageOptions={[10,25,50]}
+        rowsPerPageOptions={[10,15,20]}
         component="div"
         count={players.length}
         rowsPerPage={limit}

@@ -1,6 +1,7 @@
 import './Sidebar.css'
 import { useNavigate } from 'react-router-dom';
 import DashboardIcon from '@mui/icons-material/Dashboard';
+import DataExplorationIcon from '@mui/icons-material/DataExploration';
 import InfoIcon from '@mui/icons-material/Info';
 import SettingsIcon from '@mui/icons-material/Settings';
 import TimelineIcon from '@mui/icons-material/Timeline';
@@ -8,7 +9,7 @@ import TimelineIcon from '@mui/icons-material/Timeline';
 function Sidebar() {
   const cards = [['Dashboard',<DashboardIcon sx={{fontSize:'40px'}}/>],
                  ['Stats',<TimelineIcon sx={{fontSize:'40px'}}/>],
-                 ['Settings',<SettingsIcon sx={{fontSize:'40px'}}/>],
+                 ['Predict',<DataExplorationIcon sx={{fontSize:'40px'}}/>],
                  ['Info', <InfoIcon sx={{fontSize:'40px'}}/>]]
   
   return (

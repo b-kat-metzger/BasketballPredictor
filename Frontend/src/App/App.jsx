@@ -4,6 +4,7 @@ import './App.css'
 import Dashboard from '../Dashboard/Dashboard.jsx'
 import Header from '../Header/Header.jsx'
 import Info from '../Info/Info.jsx'
+import Predict from '../Predict/Predict.jsx'
 import Settings from '../Settings/Settings.jsx'
 import Sidebar from '../Sidebar/Sidebar.jsx'
 import Stats from '../Stats/Stats.jsx'
@@ -19,6 +20,7 @@ function App() {
               <Route path='/' element={<Dashboard />}/>
               <Route path='/dashboard' element={<Dashboard />}/>
               <Route path='/stats' element={<Stats />} />
+              <Route path='/predict' element={<Predict />}/>
               <Route path='/settings' element={<Settings />} />
               <Route path='/info' element={<Info />} />
             </Routes>
